@@ -111,7 +111,8 @@ const svgSprites = () => {
         },
       })
     )
-    .pipe(dest("dist/img"));
+    .pipe(dest("dist/img"))
+    .pipe(dest("build/img"));
 };
 
 const scripts = () => {

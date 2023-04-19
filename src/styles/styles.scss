@@ -127,8 +127,14 @@
     .request__links{
         margin-top: 20px;
     }
+     .modal{
+        width: 66%;
+    }
 }
 @media (max-width:768px) {
+    .modal{
+        width: 90%;
+    }
     .header{
         &-container{
         flex-direction: column;
