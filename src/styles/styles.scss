@@ -1,0 +1,324 @@
+@import "resourse/normalize.css";
+@import "_common.scss";
+@import "_grid.scss";
+@import "_fonts.scss";
+@import "_mixin.scss";
+@import "_variables.scss";
+@import "header.scss";
+@import "hero.scss";
+@import "portfolio.scss";
+@import "about.scss";
+@import "request.scss";
+@import "footer.scss";
+
+.container{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.overlay {
+   opacity: 0;
+   visibility: hidden;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, .5);
+   z-index: 20;
+   transition: .3s all;
+}
+.modal {
+   opacity: 0;
+   visibility: hidden;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 30; 
+   box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2); 
+   text-align: center;
+   border-radius: 3px;
+   transition: 0.3s all;
+}
+
+.modal.active,
+.overlay.active{
+   opacity: 1;
+   visibility: visible;
+}
+.js-modal-close{
+      width: 15px;
+   height: 15px;
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   fill: #fff;
+   cursor: pointer;
+    transition-property: fill;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.js-modal-close:hover{
+    fill: $primaryColor;
+}
+.js-modal-close:focus{
+    fill: $primaryColor;
+}
+.js-modal-close:active{
+    fill: #000;
+}
+
+@media (max-width:1280px) {
+    .header__menu{
+        width: 50%;
+    }
+    .about{
+        &__btn{
+            align-self: auto;
+        }
+        &__content{
+            flex-direction: column;
+            &-photo{
+                @include flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            &-main{
+                height: auto;
+                width: 100%;
+                margin-right: 0;
+                align-items: center;
+                margin-bottom: 30px;
+                &-achievements{
+            margin-bottom: 20px;
+        }
+             &-description{
+            margin-bottom: 20px;
+        }
+            }
+        }
+        &__workers{
+          display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+   
+    }
+}
+@media (max-width:1024px) {
+    .header__menu{
+        width: 70%;
+    }
+    .about__content-main{
+        max-height:none;
+    }
+    .request__links{
+        margin-top: 20px;
+    }
+}
+@media (max-width:768px) {
+    .header{
+        &-container{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+       
+        }
+     &__menu{
+        height: 0px;
+        overflow: hidden;
+         transition-property: height;
+        transition-duration: 0.15s;
+        transition-timing-function: linear;
+        }
+    
+    &__btn{
+    display: none;
+        }
+    }
+    
+ .menu-list{
+        margin-top: 40px;
+         flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu-item{
+        margin-bottom: 20px;
+    }
+ .burger-btn{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: block;
+    fill:#000;
+    svg{
+        height: 16px;
+        width: 24px;
+        transition-property: fill;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+    }
+ }
+ .burger-btn:active{
+    svg {
+        fill:$primaryColor;
+    }
+ }
+ .burger-close-btn{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: block;
+    fill:#000;
+    svg{
+        height: 16px;
+        width: 24px;
+        transition-property: fill;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+    }
+ }
+  .burger-close-btn:active{
+    svg {
+        fill:$primaryColor;
+    }
+ }
+ .contacts{
+     &-link:not(:last-child){
+        margin-right: 10px;
+     }
+    &-link{
+        svg{
+            margin-right: 0;
+            width: 48px;
+            height: 48px;
+        }
+        &-name{
+            display: none;
+        }
+    }
+ }
+ .hero__link-arrow{
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+ }
+ .portfolio{
+        &__list{
+        grid-gap: 35px;
+        grid-template-columns: 1fr;
+        &-item-img{
+            min-height: 400px;
+        }
+ }
+}
+.hidden{
+    position: absolute;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+.request{
+    padding-bottom: 80px;
+    &__manager{
+        margin-bottom: 30px;
+    }
+    &__main{
+        flex-direction: column;
+        align-items: center;
+    }
+    &__contacts{
+        width: 100%;
+        @include flex;
+    }
+    &__form{
+        align-items: center;
+    }
+    &__form-block{
+        width: 100%;
+    }
+    &__form-label{
+        width: 100%;
+    }
+}
+}
+@media (max-width:564px) {
+    .portfolio{
+        &__heading{
+            margin-bottom: 20px;
+        }
+        &__header {
+    align-items: flex-start;
+    flex-direction: column;
+}
+}
+    .about{
+        &__btn{
+            align-self: center;
+        }
+        &__heading{
+            margin-bottom: 30px;
+        }
+        &__workers{
+            margin-bottom: 30px;
+        }
+        &__workers-heading{
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        &__content-main{
+            align-items: flex-start;
+            
+        }
+        &__content-main-achievements{
+            flex-direction: column;
+            align-items:flex-start;
+        }
+    }
+    .request__btn{
+        width: 100%;
+    }
+    .footer{
+        &__links{
+            flex-direction: column;
+           
+        }
+        &__link:not(:last-child){
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    }
+}
+.burger-active{
+    position: static;
+  width: auto;
+  height: 500px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  clip: auto;
+  overflow:visible;
+  transition-property: height;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.visually-visible {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+}

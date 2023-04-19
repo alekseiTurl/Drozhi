@@ -1,0 +1,125 @@
+.portfolio{
+    padding-top: 56px;
+    padding-bottom: 80px;
+     scroll-margin-top: 5rem;
+    &__header{
+       
+        margin-bottom: 40px;
+        @include flex;
+        &-link{
+            @include flex;
+            color:$primaryColor;
+            border-bottom: 1px solid transparent;
+             transition-property: border;
+            transition-duration: 0.2s;
+            transition-timing-function: linear;
+            letter-spacing: 0.05m;
+            span{
+                margin-right: 14px;
+                font-size: 18px;
+            }
+          &-svg{
+            fill: $primaryColor;
+            stroke: transparent;
+                transform: rotate(270deg);
+                width: 16px;
+                height: 16px;
+                            
+            }
+        }
+        &-link:hover{
+            border-bottom: 1px solid $primaryColor;
+        }
+    }
+    &__list{
+        @include grid;
+         grid-template-columns: 1fr 1fr;
+         margin-bottom: 76px;
+         &-link{
+            right: 0;
+            top: 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border-radius: 9px;
+            z-index: 10;
+            transition-property: box-shadow;
+            transition-duration: 0.2s;
+            transition-timing-function: linear;
+         }
+          &-link:hover{
+             box-shadow: 0 0 10px rgba(0,0,0,0.3);
+          }
+            &-link:focus{
+                outline: none;
+             box-shadow: 0 0 10px rgba(0,0,0,0.3);
+          }
+            &-link:focus{
+                outline: none;
+             box-shadow: 0 0 10px rgba(0,0,0,0);
+          }
+         &-item{
+            position: relative;
+           
+            &-heading{
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 130%;
+                letter-spacing: -0.03em;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin-bottom: 4px;
+            }
+            &-description{
+                font-size: 18px;
+            }
+        &-img{
+            position: relative;
+            border-radius: 8px;
+            min-height: 515px;
+            height: 80%;
+            margin-bottom: 12px;
+            span{
+                position: absolute;
+                bottom: 16px;
+                left: 16px;
+                color: #fff;
+                background: $headingColor;
+                border-radius: 32px;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.02em;
+                padding: 2px 8px;
+            }
+        }
+        &-tag{
+                position: absolute;
+                bottom: 16px;
+                left: 16px;
+                color: #fff;
+                background: $headingColor;
+                border-radius: 32px;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.02em;
+                padding: 2px 8px;  
+                z-index: 20;
+                cursor: pointer;
+                transition-property: color, background-color;
+                transition-duration: 0.2s;
+                transition-timing-function: linear;
+        }
+        &-tag:hover{
+            background-color: #fff;
+            color:$headingColor ;
+        }
+         }
+    }
+    &__btn{
+        display: block;
+        margin: 0 auto;
+    }
+}

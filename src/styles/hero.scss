@@ -1,0 +1,90 @@
+.hero{
+    margin-top: 80px;
+    &-container{
+        position: relative;
+        padding-top: 30px;
+        padding-bottom:30px;
+        min-height: 945px;
+        background-image:linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 35%), url(../img/hero.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: auto;
+    }
+    &__description{
+        max-width: 210px;
+    }
+    &__contacts{
+        position:absolute;
+        bottom: 34px;
+        right: 30px;
+        @include flex;
+    }
+    &__link-arrow{
+        position: absolute;
+        bottom:30px;
+        left: 50%;
+        animation: arrow 3s linear infinite;
+        svg{
+            width: 20px;
+            height: 20px;
+            fill: #ADB5BD;
+            transition-property: fill;
+            transition-duration: 0.2s;
+            transition-timing-function: linear;
+        }
+    }
+    &__link-arrow:hover{
+        svg{
+            fill: $primaryColor;
+        }
+    }
+      &__link-arrow:focus{
+        svg{
+            fill: $primaryColor;
+        }
+    }
+}
+.contacts-link{
+    @include flex;
+    letter-spacing: 0.02em;
+    font-size: 18px;
+     transition-property: color,fill;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    svg{ fill: #8D959D;;
+        width: 24px;
+        height: 24px;
+        margin-right: 11px;
+        transition-property: fill;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+    }
+}
+.contacts-link:hover{
+    color: $primaryColor;
+    svg {
+        fill:$primaryColor;
+    }
+} 
+.contacts-link:focus{
+    color: $primaryColor;
+    svg {
+        fill:$primaryColor;
+    }
+} 
+.contacts-link:active{
+    color: #000;
+    svg {
+        fill:$primaryColor;
+    }
+} 
+
+
+.contacts-link:not(:last-of-type){
+        margin-right: 40px;
+}
+@keyframes arrow{
+0%{bottom: 30px;}
+50%{bottom: 60px;}
+100%{bottom:30px}
+}

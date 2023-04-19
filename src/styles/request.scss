@@ -1,0 +1,136 @@
+.request{
+    scroll-margin-top: 5rem;
+    padding-bottom: 155px;
+    &-heading{
+        margin-bottom: 50px;
+    }
+    &__contacts{
+        width: 36%;
+    }
+    &__main{
+        @include flex;
+        align-items: initial;
+        flex-wrap: wrap;
+    }
+    &__manager{
+     
+        &-avatar{
+            margin-bottom: 30px;
+        }
+        &-name{
+            margin: 0;
+            margin-bottom: 8px;
+            letter-spacing: -0.06em;
+        }
+        &-descr{
+            display: inline-block;
+            font-size: 18px;
+        }
+    }
+    &__links{
+        &-heading{
+            margin-bottom: 17px;
+            letter-spacing: -0.03em;
+            line-height: 130%;
+        }
+        &-group {
+            color:$primaryColor;
+            @include flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+     &__link:not(:last-child){
+        margin-bottom: 10px;
+     }
+    &__link{
+        font-size: 18px;
+        line-height: 30px;
+        display: inline-block;
+        border-bottom: 1px solid rgba(210, 32, 32, 0.4);
+         transition-property: color, background-color;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+        svg{
+            width: 16px;
+            height: 16px;
+            transform: rotate(230deg);
+            fill: rgba(210, 32, 32, 0.4);
+            transition-property: fill;
+            transition-duration: 0.2s;
+            transition-timing-function: linear;
+        }
+    }
+     &__link:hover{
+        background-color: $primaryColor;
+        color: #fff;
+        svg{
+            fill: #fff;
+        }
+     }
+      &__link:focus{
+        background-color: $primaryColor;
+        color: #fff;
+        svg{
+            fill: #fff;
+        }
+     }
+         &__link:active{
+        background-color: transparent;
+        color: #000;
+        border-color: #000;
+        svg{
+            fill: #000;
+        }
+     }
+    &__form{
+        @include flex;
+        align-items: flex-start;
+        flex-direction: column;
+       &-block{
+        width: 66%;
+       }
+       &-input::placeholder{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        color: #ADB5BD;
+       }
+       &-label{
+        color: #ADB5BD;
+        width: 62%;
+          margin-bottom: 60px;
+       }
+        &-input{
+            width: 100%;
+            padding: 12px 0 8px 0;
+            border-bottom: 1px solid #CED4DA;
+             transition-property: color, background-color;
+            transition-duration: 0.2s;
+            transition-timing-function: linear;
+        }
+        &-input:hover {
+            background: rgba( 0,0,0,0.03 );
+        }
+        &-textarea::placeholder{
+             font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        color: #ADB5BD;
+        }
+        &-textarea{
+            width: 100%;
+            min-height: 150px;
+            border: none;
+             border-bottom: 1px solid #CED4DA;
+             margin-bottom: 30px;
+        }
+    }
+    &__btn {
+        cursor: pointer;
+        padding: 16px 32px;
+        font-weight: 500;
+        font-size: 24px;
+    }
+}
+

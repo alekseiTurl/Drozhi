@@ -1,0 +1,154 @@
+@import "_mixin.scss";
+@import "_variables.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  font-style: normal;
+  color: $textColor;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  color:&headingColor;
+}
+h1{
+  font-size: 56px;
+}
+h2{
+  font-size: 48px;
+}
+h3{
+  font-size: 40px;
+}
+h4{
+  font-size: 32px;
+}
+h5{
+  font-size: 26px;
+}
+
+img {
+  max-width: 100%;
+}
+svg{
+  fill: inherit;
+  max-width: 100%;
+}
+svg path {
+    fill: inherit;
+}
+
+input {
+  outline: none;
+  border-color: transparent;
+}
+.container {
+  max-width: $containerMaxWidth;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section-heading {
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 130%;
+color:$headingColor;
+}
+.btn-primary {
+    padding: 10px 20px;
+    background-color: $primaryColor;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    transition-property: color, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+.btn-primary:hover{
+    opacity:0.7;
+}
+.btn-primary:active{
+    opacity:1;
+    color: #000;
+}
+.btn-primary:focus{
+    opacity:1;
+    outline: 1px solid $primaryColor;
+    outline-offset: 5px;
+}
+
+.btn-light {
+    padding: 20px 70px;
+    background-color: transparent;
+    color: $primaryColor;
+    border-radius: 50px;
+    border: 1px solid $primaryColor;
+    font-weight: 400;
+   font-size: 18px;
+    line-height: 30px;
+    transition-property: color, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.btn-light:hover{
+    background-color: $primaryColor;
+     color: #fff;
+}
+.btn-light:focus{
+        color: #fff;
+    background-color: $primaryColor;
+  outline: 1px solid $primaryColor;
+    outline-offset: 5px;
+}
+.btn-light:active{
+    background-color: transparent;
+     color: #000;
+}

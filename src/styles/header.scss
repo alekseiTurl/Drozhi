@@ -1,0 +1,52 @@
+.header{
+    right: 0;
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: 100; 
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    line-height: 150%;
+&-container{
+@include flex;
+padding: 10px 0;
+}
+&__logo{
+    max-height: 45px;
+}
+&__menu{
+    width: 38%;
+    padding: 0;
+}
+&__link{
+    padding: 10px 0;
+    border-bottom: 1px solid transparent;
+    transition-property: color, border;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+&__link:hover{
+    border-bottom: 1px solid $primaryColor;
+    color:$primaryColor;
+}
+
+&__link:focus{
+    outline: none;
+    border-bottom: 1px solid $primaryColor;
+    color:$primaryColor;
+}
+&__link:active{
+    border-bottom: 1px solid transparent;
+    color:$primaryColor;
+}
+}
+.menu-list{
+    @include flex;
+}
+.burger-btn{
+    display: none;
+}
+.burger-close-btn{
+    display: none;
+}
