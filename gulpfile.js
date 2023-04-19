@@ -27,8 +27,8 @@ const resources = () => {
 };
 
 const fonts = () => {
-  src("src/fonts/**.ttf").pipe(ttf2woff()).pipe(dest("dist/fonts/"));
-  return src("src/fonts/**.ttf").pipe(ttf2woff2()).pipe(dest("dist/fonts/"));
+  src("src/fonts/**.ttf").pipe(ttf2woff()).pipe(dest("dist/fonts/")).pipe(dest("build/fonts/"));
+  return src("src/fonts/**.ttf").pipe(ttf2woff2()).pipe(dest("dist/fonts/")).pipe(dest("build/fonts/"));
 };
 
 const styles = () => {
@@ -86,6 +86,7 @@ const images = () => {
   ])
     .pipe(imagemin())
     .pipe(dest("dist/img"))
+    .pipe(dest("build/img"))
     .pipe(browserSync.stream());
 };
 
